@@ -6,10 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 First clone the repo `git clone git@github.com:nick-telfer/flopbuster-ntelfer.git`
 
-Go to the new folder `cd flopbuster-ntelfer`
+Go to the new folder `cd flopbuster-ntelfer/`
 
 Install the dependencies `npm install`
 
 Start the dev server `npm start`
 
-navigate to `http://localhost:4200/` in your browser
+Navigate to `http://localhost:4200/` in your browser
