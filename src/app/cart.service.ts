@@ -17,8 +17,10 @@ export class CartService {
   public checkout(rentalList: Movie[]) {
     let checkoutObservables: Observable<Movie>[] = [];
 
-    rentalList.forEach((movie) => {
+    rentalList.forEach((rental) => {
+      let movie = {...rental};
       movie.checkedOut = true;
+      movie.id = rental.flopId;
       checkoutObservables.push(this.movieService.save(movie));
     });
 
