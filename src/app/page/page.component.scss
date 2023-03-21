@@ -1,0 +1,12 @@
+.page-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    padding: 24px;
+
+    height: 100vh;
+    overflow: scroll;
+    padding-top: 74px;
+
+    min-width: 375px
+}

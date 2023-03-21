@@ -1,0 +1,15 @@
+<div (click)="showDetailsClicked()" class="card bg-dark text-light">
+    <div class="card-body">
+        <h3>{{ movie.title }}</h3>
+
+        <div class="movie-poster">
+            <img src="{{ movie.imageUrl }}" alt="" />
+
+            <fb-stars [movie]="movie"></fb-stars>
+        </div>
+
+        <button *ngIf="!movie.checkedOut" (click)="onRentClicked($event)" class="btn btn-primary">Rent</button>
+        <button *ngIf="movie.checkedOut" (click)="onReturnClicked($event)" class="btn btn-danger">Return</button>
+    </div>
+</div>
+  

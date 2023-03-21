@@ -1,0 +1,35 @@
+.movies {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    align-items: center;
+
+    @media (min-width: 772px) {
+        align-items: unset;
+    }
+}
+
+.movie-tiles {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 24px;
+    column-gap: 24px;
+    justify-content: space-evenly;
+
+    @media (min-width: 772px) {
+        grid-template-columns: auto auto;
+    }
+
+    @media (min-width: 1146px) {
+        grid-template-columns: auto auto auto;
+    }
+
+    @media (min-width: 1520px) {
+        grid-template-columns: auto auto auto auto;
+    }
+}
+
+.movie-tile {
+    width: 350px;
+    height: 525px;
+}

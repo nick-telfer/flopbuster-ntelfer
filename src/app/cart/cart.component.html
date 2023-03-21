@@ -1,0 +1,36 @@
+<fb-page>
+    <fb-rental-list 
+        [rentalList]="rentalList" 
+        [showDetailedList]="true" 
+        (checkout)="checkout()" 
+        (deleteRental)="deleteRental($event)"
+    ></fb-rental-list>
+    <div class="row gx-5">
+        <div class="col-3">
+            <div class="card p-3 mr-3 d-flex flex-row justify-content-between">
+                <span>Discount</span>
+                <span>{{ discount | currency }}</span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card p-3 mr-3 d-flex flex-row justify-content-between">
+                <span>Tax</span>
+                <span>{{ tax | currency }}</span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card p-3 mr-3 d-flex flex-row justify-content-between">
+                <span>Subtotal</span>
+                <span>{{ subtotal | currency }}</span>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card p-3 mr-3 d-flex flex-row justify-content-between">
+                <span>Total</span>
+                <span>{{ total | currency }}</span>
+            </div>
+        </div>
+    </div>
+
+    <button *ngIf="rentalList.length" (click)="checkout()" class="btn btn-primary col-3">Checkout</button>
+</fb-page>

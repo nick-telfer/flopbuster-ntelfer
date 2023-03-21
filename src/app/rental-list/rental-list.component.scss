@@ -1,0 +1,18 @@
+button.btn-link {
+    text-decoration: none;
+    padding: 0;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.rental-row:nth-of-type(even) {
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+.mat-icon {
+    margin: auto 0 auto auto;
+}
+

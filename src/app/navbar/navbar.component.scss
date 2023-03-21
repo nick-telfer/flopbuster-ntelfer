@@ -1,0 +1,40 @@
+.navbar {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 16px;
+    justify-content: unset;
+    position: fixed;
+}
+
+.navbar-items {
+  display: flex;
+  align-items: center;
+  
+  height: 100%;
+}
+
+.nav-item {
+    height: 100%;
+    padding: 16px;
+
+    &:hover {
+        background-color: #6c757d;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}

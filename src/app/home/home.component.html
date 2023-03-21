@@ -1,0 +1,50 @@
+<fb-page>
+    <div class="header-panel d-flex">
+        <div class="col-6 text-dark">
+            We have all the best flops in the business!
+            <br />
+            Choose a flop to rent
+        </div>
+    
+        <fb-rental-list 
+            [rentalList]="rentalList" 
+            (checkout)="checkout()"
+            (deleteRental)="deleteRental($event)" 
+            class="col-6"
+        ></fb-rental-list>
+    </div>
+
+    <div class="movies">
+        <h3 class="text-dark">Movies to Rent</h3>
+        <div class="form-group d-flex gap-4">
+            <label>Sort By:</label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input [(ngModel)]="sort" class="form-check-input" type="radio" name="sort" id="sort-by-title" value="title" [checked]="sort === 'title'">
+                    <label class="form-check-label" for="sort-by-title">
+                    Title
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input [(ngModel)]="sort" class="form-check-input" type="radio" name="sort" id="sort-by-stars" value="stars" [checked]="sort === 'stars'">
+                    <label class="form-check-label" for="sort-by-stars">
+                    Stars
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="movie-tiles">
+            <ng-container *ngFor="let flop of flops$ | async | sort: sort">
+            <fb-movie-tile
+                *ngIf="flop | rentable: rentalList"
+                class="movie-tile"
+                [movie]="flop"
+                (rent)="rentMovie(flop)"
+                (return)="returnMovie(flop)"
+                (showDetails)="showDetails(flop)"
+            ></fb-movie-tile>
+            </ng-container>
+        </div>
+    </div>
+</fb-page>
